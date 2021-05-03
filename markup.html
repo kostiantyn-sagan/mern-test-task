@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS, HTML</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <a href="./index.html">На главную</a>
+
+    <h1>Задание</h1>
+
+    <ol>
+      <li>
+        <p>
+          Опишите все известные вам способы позиционирования 5 элементов по
+          центру, каждый из которых должен занимать 20%.
+        </p>
+        <ul>
+          <li>
+            <code>
+              <pre>
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+              </pre>
+              <pre>
+.flex-container {
+  display: flex;
+}
+              </pre>
+              <pre>
+.flex-element {
+  width: 20%;
+}
+              </pre>
+            </code>
+          </li>
+          <li>
+            <code>
+              <pre>
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+              </pre>
+              <pre>
+.flex-container {
+  display: flex;
+}
+              </pre>
+              <pre>
+.flex-element {
+  width: calc((100% - /*кол-во маржинов в строке * значение маржина*/) / 5);
+}
+              </pre>
+            </code>
+          </li>
+          <li>
+            <code>
+              <pre>
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+              </pre>
+              <pre>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+              </pre>
+            </code>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Опишите все известные вам способы позиционирования модального окна, по
+          центру экрана.
+        </p>
+        <ul>
+          <li>
+            <code>
+              <pre>
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+              </pre>
+              <pre>
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+              </pre>
+              <pre>
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+              </pre>
+              <pre>
+.content {
+  position: relative;
+}
+              </pre>
+            </code>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Напишите стили для кнопки, которая может иметь несколько состояний:
+          active, disabled, danger. Цвета произвольные.
+        </p>
+        <code>
+          <pre>
+.btn {
+  border: none;
+  border-radius: 4px;
+  padding: 10px 32px;
+  color: #ffffff;
+  background-color: #2196f3;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+          </pre>
+          <pre>
+.btn:active {
+  background-color: #757575;
+}
+          </pre>
+          <pre>
+.btn:disabled {
+  opacity: 0.65;
+  cursor: auto;
+}
+          </pre>
+          <pre>
+.btn.danger {
+  background-color: #dc3545;
+}
+          </pre>
+        </code>
+      </li>
+      <li>
+        <p>
+          Сверстайте страницу логина, которая должна содержать только форму с
+          полями email, password.
+        </p>
+        <a href="./login-page.html">На страницу логина</a>
+      </li>
+    </ol>
+  </body>
+</html>

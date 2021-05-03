@@ -1,0 +1,63 @@
+body {
+  font-family: sans-serif;
+}
+
+code {
+  color: #757575;
+}
+
+.form {
+  min-height: 100vh;
+  max-width: 600px;
+  padding: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-field {
+  display: block;
+  margin-bottom: 28px;
+}
+
+.form-label {
+  color: #757575;
+  letter-spacing: 0.03em;
+}
+
+.form-input {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: #757575;
+  background-color: transparent;
+  outline: none;
+}
+
+.login-btn {
+  border: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  padding: 10px 56px;
+
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  background-color: #2196f3;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-btn:hover,
+.login-btn:focus {
+  background-color: #188ce8;
+}

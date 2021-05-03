@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIT making changes</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <a href="./index.html">На главную</a>
+
+    <h1>GIT внесение изменений</h1>
+    <h2>Рабочее окружение</h2>
+    <p>
+      У вас чистая операционнная система с установленными программами git, nano,
+      ssh. Ваш публичный ключь уже добавлен к git репозиторию и вы имеете полный
+      доступ на чтение/запись, но он отсутствует на вашем компьютере.
+      Репозиторий: git@example.com:example/test.git Ветки: master, dev, stage,
+      release
+    </p>
+    <h2>Задание</h2>
+    <p>
+      Внести изменения в ветке dev репозитория git@example.com:example/test.git,
+      добавив в корень файл Readme.md с текстом
+      <code>### May be in future</code> и залить их на удаленный репозиторий.
+      Напишите набор команд для решения этой задачи с коментариями.
+    </p>
+    <code>
+      <pre>
+# Перехожу в папку my-project
+cd /#путь/#путь/my-project
+# Клонирую репозиторий в папку my-project
+git clone git@example.com:example/test.git
+# Перехожу в папку с проектом
+cd test/
+# Проверяю в какой ветке я нахожусь
+git branch
+# Переключаюсь на ветку dev
+git checkout dev
+# Проверяю в какой ветке я нахожусь
+git branch
+# Добавляю файл Readme.md с текстом ### May be in future
+echo "### May be in future" >> Readme.md
+# Сохраняю все изменения в ветке
+git add .
+# Создаю коммит с сообщением
+git commit -m "Добавляет файл с описанием"
+# Проверяю статус ветки
+git status
+# Заливаю изменения из локальной ветки на удаленный репозиторий
+git push -u origin dev
+      </pre>
+    </code>
+  </body>
+</html>

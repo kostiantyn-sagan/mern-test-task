@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linux navigation and search</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <a href="./index.html">На главную</a>
+
+    <h1>Linux навигация и поиск</h1>
+    <h2>Файловая структура</h2>
+    <code>
+      <pre>
+/
+--/var/
+----/www/
+------/html/
+--------/index.html
+--------/404.html
+--------/.htaccess
+----/logs/
+------/access.log
+      </pre>
+    </code>
+    <h2>Задание</h2>
+    <p>
+      Напишите набор команд с комментарием их работы которые вы примените для
+      решения следующих задач:
+    </p>
+    <ol>
+      <li>
+        <p>Выведите список всех файлов в папке <code>html</code></p>
+      </li>
+      <li>
+        <p>
+          Найдите в файле <code>access.log</code> все упоминания строки "404"
+        </p>
+      </li>
+      <li>
+        <p>
+          На основании файла <code>404.html</code> сделайте файл
+          <code>403.html</code>
+          заменив в его содержимом все упоминания 404 на 403
+        </p>
+      </li>
+      <li>
+        <p>
+          Модифицируйте права доступа и владельца файла
+          <code>index.html</code> следующим образом: Текущий пользователь должен
+          иметь права на чтение/запись Группа www-data на чтение Все остальные
+          не имеют доступа к файлу
+        </p>
+      </li>
+      <li>
+        <p>
+          Сделайте символическую ссылку на файл <code>access.log</code> в папке
+          <code>html</code>.
+        </p>
+      </li>
+      <li>
+        <p>Выведите на экран все файлы в папке <code>var</code></p>
+      </li>
+      <li>
+        <p>
+          Создайте новый файл <code>503.html</code> в папке <code>html</code> с
+          следующим содержимым:
+        </p>
+        <code>
+          <pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;503&lt;/title&gt;
+  &lt;/head&gt;
+&lt;/html&gt;
+          </pre>
+        </code>
+      </li>
+    </ol>
+
+    <code>
+      <pre>
+1.
+# Вывожу список всех файлов в папке html
+ls -la /#путь/var/www/html
+2.
+# Перехожу в папку var
+cd /#путь/var
+# Выполняю поиск в файле access.log все упоминания строки "404"
+grep "404" logs/access.log
+3.
+# На основании файла 404.html создаю копию 403.html
+cp www/html/404.html www/html/403.html
+# Заменяю в файле 403.html все упоминания 404 на 403
+sed -i 's/404/403/g' www/html/403.html
+4.
+# Вывожу информацию о правах доступа к файлу index.html
+ls -l www/html/index.html
+# Устанавливаю права доступа владельца на чтение/запись
+chmod u+rw www/html/index.html
+# Устанавливаю права доступа группы на чтение
+chmod g+r www/html/index.html
+# Убираю права доступа группы на запись
+chmod g-w www/html/index.html
+# Убираю права доступа всех остальных пользователей на чтение/запись
+chmod o-rw www/html/index.html
+5.
+# Перехожу в папку html
+cd www/html/
+# Создаю символическую ссылку на файл access.log
+ln -s ../../logs/access.log link
+6.
+# Вывожу на экран все файлы в папке var
+ls ../../
+7.
+# Создаю новый файл 503.html в папке html с следующим содержимым:
+echo "&lt;html&gt;&lt;head&gt;&lt;title&gt;503&lt;/title&gt;&lt;/head&gt;&lt;/html&gt;" >> 503.html
+      </pre>
+    </code>
+  </body>
+</html>
